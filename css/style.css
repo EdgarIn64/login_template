@@ -32,11 +32,16 @@ body{
 	align-items: center;
 }
 
-.login-content{
+.login-content, .sign-content{
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	text-align: center;
+}
+
+.form-sign {
+	padding: 15px;
+	box-shadow: 2px 2px 5px 3px lightgray;	
 }
 
 .img img{

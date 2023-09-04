@@ -2,18 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
-	<link rel="stylesheet" href="css/estilo.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Main Page</title>
+	<link rel="icon" type="image/png" href="img/avatar.svg">
+	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/bootstrap.css">
 </head>
 <body>
 	<?php  
 	session_start();
-	include_once("modelo/Usuario.php");
-	$usuario = null;
+	include_once("modelo/User.php");
+	$user = null;
 
-	if(isset($_SESSION['usuario']))
-		$usuario = unserialize($_SESSION['usuario']);
+	if(isset($_SESSION['user']))
+		$user = unserialize($_SESSION['user']);
 	else
 		header("Location: login.php");
 	?>
@@ -60,25 +62,24 @@
 
 	<nav class="navbar navbar-dark bg-dark  navbar-expand-md navbar-light bg-light fixed-top">
 		<div class="text-white bg-success p-2">
-	
-			<?php echo "{$usuario->getNombre()} - #{$usuario->getId()}";?>
+			<?php echo "{$user->getName()} - #{$user->getId()}";?>
 		</div>
 		<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
 			<div class="navbar-nav mr-auto">
 				<div class="offset-md-1 mr-auto text-center"></div>
-				<a class="nav-item nav-link text-justify active ml-3 hover-primary" href="#">Inicio</a>
-				<a class="nav-item nav-link text-justify ml-3 hover-primary" href="#">Nosotros</a>
+				<a class="nav-item nav-link text-justify active ml-3 hover-primary" href="#">Home</a>
+				<a class="nav-item nav-link text-justify ml-3 hover-primary" href="#">About our</a>
 				<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle text-justify ml-3" href="" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						Servicios
+						Services
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="#">Preguntas Frecuentes</a>
-						<a class="dropdown-item" href="#">Compras</a>
-						<a class="dropdown-item" href="servicios.html">Otros</a>
+						<a class="dropdown-item" href="#">FAQs</a>
+						<a class="dropdown-item" href="#">Buys</a>
+						<a class="dropdown-item" href="servicios.html">Others</a>
 					</div>
 				</li>
-				<a class="nav-item nav-link text-justify ml-3 hover-primary" href="controlador/Logout.php">Salir</a>
+				<a class="nav-item nav-link text-justify ml-3 hover-primary" href="controlador/Logout.php">Logout</a>
 			</div>
 			<div class="text-center justify-content-center">
 				<a class="btn btn-outline-primary" target="_blank" href="https://www.facebook.com">Facebook</a>
@@ -98,36 +99,6 @@
 			</div>
 		</div>
 	</div>
-
-	<form action="" class="form-inline d-flex justify-content-center flex-column flex-md-row">
-		<div class="form-group mx-2 my-2">
-			<label class="d-none d-md-block" for="">Nombre</label>
-			<input type="text" class="form-control" placeholder="Nombre">
-		</div>
-		<div class="form-group mx-2 my-2">
-			<label class="d-none d-md-block" for="">Apellido</label>
-			<input type="text" class="form-control" placeholder="Apellido">
-		</div>
-		<div class="form-group mx-2 my-2">
-			<button class="btn btn-outline-primary">enviar</button>
-		</div>
-	</form>
-
-
-
-	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis aperiam molestias, sint totam dolorum laudantium deleniti obcaecati minima odio provident, optio consectetur quas velit est amet a facere accusantium necessitatibus ea, officiis? Obcaecati harum eligendi incidunt ipsam alias maiores accusamus dicta quia velit molestias, placeat ullam vel corporis explicabo. Porro minus facere quos illum tenetur odit temporibus voluptate a perferendis magni dolorum laudantium molestiae veniam mollitia, illo harum unde, error repellat rem repellendus in, earum ipsum sequi! Explicabo delectus ipsum maxime id vitae, quod necessitatibus voluptates magnam blanditiis et rem enim at voluptatem quisquam inventore est, voluptate aut animi modi consectetur reiciendis molestias ullam repellat sapiente. Vel cupiditate ipsum delectus quod voluptatibus, consectetur omnis numquam ipsa tempora culpa eligendi officiis! Neque explicabo eos fugiat nisi, tenetur modi optio, dolore placeat molestias iste odit, velit rerum aperiam nihil laborum suscipit molestiae. Assumenda cumque, molestiae sed aliquid corrupti praesentium possimus soluta ex delectus est, debitis hic voluptatem natus labore nulla suscipit reprehenderit dignissimos ipsa quae doloribus eum, aperiam totam iure temporibus doloremque. Nesciunt quibusdam aut, vitae ipsam saepe deserunt eius amet alias natus facere asperiores laudantium, cumque temporibus sunt perferendis dolore ducimus velit soluta modi repellat autem eligendi omnis dolorem! Excepturi, iusto.</p>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 	<script src="js/jquery-3.3.1.slim.min.js"></script>

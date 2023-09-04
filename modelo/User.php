@@ -1,8 +1,8 @@
 <?php  
 
-class Usuario {
+class User {
 	protected $id;
-	protected $nombre;
+	protected $name;
 	protected $password;
 
 	function getId() {
@@ -13,12 +13,12 @@ class Usuario {
 		$this->id = $id;
 	}
 
-	function getNombre() {
-		return $this->nombre;
+	function getName() {
+		return $this->name;
 	}
 
-	function setNombre($nombre) {
-		$this->nombre = $nombre;
+	function setName($name) {
+		$this->name = $name;
 	}
 
 	function getPassword() {

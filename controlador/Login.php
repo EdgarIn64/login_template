@@ -1,22 +1,22 @@
 <?php 
 session_start();
 if(isset($_POST['btningresar'])) {
-	include("modelo/Conexion.php");
-	$conexion = new AccesoDatos();
-	$conn = $conexion->conectar();
+	include("modelo/Connect.php");
+	$connection = new Connect();
+	$conn = $connection->connection();
 	$userName = $_POST['userName'];
 	$password = $_POST['password'];
 	$query = "Select * from usuario Where nombre = '$userName' AND password = '$password';";
 	$sql = $conn->query($query);
-	//$conn = $conexion->desconectar();
+	$conn = $connection->desconectar();
 
 	if ($obj = $sql->fetch_object()) {
-		include("modelo/Usuario.php");
-		$usuario = new Usuario();
-		$usuario->setId($obj->id);
-		$usuario->setNombre($obj->nombre);
-		$usuario->setPassword($obj->password);
-		$_SESSION['usuario'] = serialize($usuario);
+		include("modelo/User.php");
+		$user = new User();
+		$user->setId($obj->id);
+		$user->setName($obj->nombre);
+		$user->setPassword($obj->password);
+		$_SESSION['user'] = serialize($user);
 		header("Location: index.php");
 	}
 	else {

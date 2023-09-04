@@ -1,13 +1,13 @@
-var contador = true;
-function vista() {
-    var texto = document.getElementById("verPassword");
-    if (contador == true) {
-        texto.className = "fas fa-eye-slash verPassword";
-        document.getElementById("input").type="text";
-        contador=false;
+var count = true;
+function view() {
+    var text = document.getElementById("viewPassword");
+    if (count == true) {
+        text.className = "fas fa-eye-slash viewPassword";
+        document.getElementById("password").type="text";
+        count=false;
     } else {
-        texto.className = "fas fa-eye verPassword";
-        document.getElementById("input").type="password";
-        contador = true;
+        text.className = "fas fa-eye viewPassword";
+        document.getElementById("password").type="password";
+        count = true;
     }
 }

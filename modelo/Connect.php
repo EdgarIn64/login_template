@@ -1,36 +1,36 @@
 <?php
 
 
-class AccesoDatos{
+class Connect {
 	// Valores de la base de datos actual.
 	// Nota: Se deben cambiar cuando 
 	private $hostname = 'localhost';
 	private $username = 'root';
 	private $password = '';
 	private $database = 'login';
- 	private $conexion = null; 
+ 	private $connection = null; 
 
 
- 	function getConexion() {
- 		return $this->conexion;
+ 	function getConnection() {
+ 		return $this->connection;
  	}
 
- 	function conectar() {
+ 	function connection () {
 		try {
-			$this->conexion = new mysqli($this->hostname, 
+			$this->connection = new mysqli($this->hostname, 
 				$this->username, $this->password, $this->database);
 		} catch (PDOException $e) {
 			die('Connection Failed: ' . $e->getMessage());
 		}
- 		return $this->conexion;
+ 		return $this->connection;
  	}
 
  	function desconectar(){
-		if ($this->conexion != null){
-			mysqli_close($this->conexion);
-			$this->conexion = null;
+		if ($this->connection != null){
+			mysqli_close($this->connection);
+			$this->connection = null;
 		}
- 		return $this->conexion;
+ 		return $this->connection;
 	}
 }
 
